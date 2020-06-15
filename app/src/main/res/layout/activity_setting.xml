@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@mipmap/icon_bj"
+    android:gravity="center"
+    android:orientation="vertical">
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/title"
+            android:textColor="@color/white"
+            android:textSize="40sp" />
+
+        <TextView
+            android:id="@+id/tv_zx"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/ll_login_one"
+            android:text="直线线夹数据"
+            android:textColor="#c8ffff"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_nz"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/ll_login_one"
+            android:text="耐张线夹数据"
+            android:textColor="#c8ffff"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_gc"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/ll_login_one"
+            android:text="工程名数据"
+            android:textColor="#c8ffff"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_jl"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/ll_login_one"
+            android:text="监理单位数据"
+            android:textColor="#c8ffff"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_sg"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/ll_login_one"
+            android:text="施工单位数据"
+            android:textColor="#c8ffff"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+        <TextView
+            android:id="@+id/tv_login_out"
+            android:layout_width="250dp"
+            android:layout_height="40dp"
+            android:layout_marginTop="30dp"
+            android:background="@drawable/ll_login_one"
+            android:text="退出"
+            android:textColor="#c8ffff"
+            android:textSize="20sp"
+            android:gravity="center"/>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="70dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+            <View
+                android:layout_width="180dp"
+                android:layout_height="0.5dp"
+                android:background="#c9ffff"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="40dp"
+                android:text="南方电网公司"
+                android:textSize="20sp"
+                android:textColor="@color/white"/>
+            <View
+                android:layout_width="180dp"
+                android:layout_height="0.5dp"
+                android:layout_marginLeft="40dp"
+                android:background="#c9ffff"/>
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+</LinearLayout>
