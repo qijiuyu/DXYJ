@@ -8,6 +8,7 @@ import androidx.annotation.Nullable;
 
 import com.bian.dan.dxyj.R;
 import com.bian.dan.dxyj.activity.setting.SettingActivity;
+import com.bian.dan.dxyj.utils.AddDataUtil;
 import com.bian.dan.dxyj.utils.SPUtil;
 import com.bian.dan.dxyj.utils.ToastUtil;
 
@@ -42,6 +43,10 @@ public class LoginActivity extends BaseActivity {
         setContentView(R.layout.activity_login);
         ButterKnife.bind(this);
         initView();
+
+        AddDataUtil addDataUtil=new AddDataUtil();
+        addDataUtil.addNZdata(this);
+        addDataUtil.addZXdata(this);
     }
 
 

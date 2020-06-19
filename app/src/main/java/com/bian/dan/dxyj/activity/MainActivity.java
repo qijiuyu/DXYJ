@@ -8,17 +8,21 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.widget.EditText;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import com.bian.dan.dxyj.R;
+import com.bian.dan.dxyj.bean.NameBean;
+import com.bian.dan.dxyj.utils.JsonUtil;
 import com.bian.dan.dxyj.utils.SPUtil;
+import com.bian.dan.dxyj.utils.ToastUtil;
 import com.bian.dan.dxyj.view.MainPopwindow;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class MainActivity extends AppCompatActivity implements View.OnFocusChangeListener, TextWatcher {
+public class MainActivity extends BaseActivity implements View.OnFocusChangeListener, TextWatcher {
 
     @BindView(R.id.et_project)
     EditText etProject;
@@ -61,7 +65,6 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
      * 监听获得焦点
      */
     String tag;
-    @Override
     public void onFocusChange(View v, boolean hasFocus) {
         if(hasFocus){
             tag=v.getTag().toString();
@@ -70,6 +73,8 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
         }else{
             //关闭下拉框
           closePopwindow();
+          //保存最新的值
+          saveNewData(((EditText)v).getText().toString().trim());
         }
     }
 
@@ -106,8 +111,28 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
                 startActivity(intent);
                 finish();
                 break;
+            //进入
             case R.id.tv_go:
-
+                 String project=etProject.getText().toString().trim();
+                 String model=etModel.getText().toString().trim();
+                 String superVision=etSupervision.getText().toString().trim();
+                 String construction=etConstruction.getText().toString().trim();
+                 if(TextUtils.isEmpty(project)){
+                     ToastUtil.showLong("请输入工程名");
+                     return;
+                 }
+                if(TextUtils.isEmpty(model)){
+                    ToastUtil.showLong("请输入导线型号");
+                    return;
+                }
+                if(TextUtils.isEmpty(superVision)){
+                    ToastUtil.showLong("请输入监理单位");
+                    return;
+                }
+                if(TextUtils.isEmpty(construction)){
+                    ToastUtil.showLong("请输入施工单位");
+                    return;
+                }
                 break;
             default:
                 break;
@@ -167,6 +192,77 @@ public class MainActivity extends AppCompatActivity implements View.OnFocusChang
         if (mainPopwindow != null && mainPopwindow.isShowing()) {
             mainPopwindow.closeShow();
             mainPopwindow=null;
+        }
+    }
+
+
+    /**
+     * 保存最新的值
+     */
+    private void saveNewData(String data){
+        if(TextUtils.isEmpty(data)){
+            return;
+        }
+        String totalMsg=null;
+        boolean isAdd=true;
+        List<NameBean> dataBeanList=new ArrayList<>();
+        NameBean nameBean=new NameBean();
+        switch (tag){
+            case "1":
+                totalMsg=SPUtil.getInstance(this).getString(SPUtil.PROJECT_NAME);
+                if (!TextUtils.isEmpty(totalMsg)) {
+                    dataBeanList.addAll(JsonUtil.stringToList(totalMsg, NameBean.class));
+                    for (int i=0,len=dataBeanList.size();i<len;i++){
+                         if(dataBeanList.get(i).getName().equals(data)){
+                             isAdd=false;
+                             break;
+                         }
+                    }
+                }
+                if(isAdd){
+                    nameBean.setName(data);
+                    dataBeanList.add(nameBean);
+                    SPUtil.getInstance(this).addString(SPUtil.PROJECT_NAME, JsonUtil.objectToString(dataBeanList));
+                }
+                break;
+            case "2":
+                break;
+            case "3":
+                totalMsg=SPUtil.getInstance(this).getString(SPUtil.SUPERVISION);
+                if (!TextUtils.isEmpty(totalMsg)) {
+                    dataBeanList.addAll(JsonUtil.stringToList(totalMsg, NameBean.class));
+                    for (int i=0,len=dataBeanList.size();i<len;i++){
+                        if(dataBeanList.get(i).getName().equals(data)){
+                            isAdd=false;
+                            break;
+                        }
+                    }
+                }
+                if(isAdd){
+                    nameBean.setName(data);
+                    dataBeanList.add(nameBean);
+                    SPUtil.getInstance(this).addString(SPUtil.SUPERVISION, JsonUtil.objectToString(dataBeanList));
+                }
+                break;
+            case "4":
+                totalMsg=SPUtil.getInstance(this).getString(SPUtil.CONSTRUCTION);
+                if (!TextUtils.isEmpty(totalMsg)) {
+                    dataBeanList.addAll(JsonUtil.stringToList(totalMsg, NameBean.class));
+                    for (int i=0,len=dataBeanList.size();i<len;i++){
+                        if(dataBeanList.get(i).getName().equals(data)){
+                            isAdd=false;
+                            break;
+                        }
+                    }
+                }
+                if(isAdd){
+                    nameBean.setName(data);
+                    dataBeanList.add(nameBean);
+                    SPUtil.getInstance(this).addString(SPUtil.CONSTRUCTION, JsonUtil.objectToString(dataBeanList));
+                }
+                break;
+            default:
+                break;
         }
     }
 }
