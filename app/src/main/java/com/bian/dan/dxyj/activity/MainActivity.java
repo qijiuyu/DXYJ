@@ -11,6 +11,7 @@ import android.widget.EditText;
 import com.bian.dan.dxyj.R;
 import com.bian.dan.dxyj.bean.MainBean;
 import com.bian.dan.dxyj.bean.NameBean;
+import com.bian.dan.dxyj.utils.AddDataUtil;
 import com.bian.dan.dxyj.utils.JsonUtil;
 import com.bian.dan.dxyj.utils.SPUtil;
 import com.bian.dan.dxyj.utils.ToastUtil;
@@ -39,6 +40,9 @@ public class MainActivity extends BaseActivity implements View.OnFocusChangeList
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
         initView();
+
+        new AddDataUtil().addZXdata(this);
+        new AddDataUtil().addNZdata(this);
     }
 
 
@@ -60,6 +64,17 @@ public class MainActivity extends BaseActivity implements View.OnFocusChangeList
         etModel.addTextChangedListener(this);
         etSupervision.addTextChangedListener(this);
         etConstruction.addTextChangedListener(this);
+
+        String data=SPUtil.getInstance(this).getString(SPUtil.MAIN_DATA);
+        if(!TextUtils.isEmpty(data)){
+            final MainBean mainBean= (MainBean) JsonUtil.stringToObject(data,MainBean.class);
+            if(mainBean!=null){
+                etProject.setText(mainBean.getProject());
+                etModel.setText(mainBean.getModel());
+                etSupervision.setText(mainBean.getSuperVision());
+                etConstruction.setText(mainBean.getConstruction());
+            }
+        }
     }
 
     /**
@@ -136,6 +151,7 @@ public class MainActivity extends BaseActivity implements View.OnFocusChangeList
                 }
                 MainBean mainBean=new MainBean(project,model,superVision,construction);
                 SPUtil.getInstance(this).addString(SPUtil.MAIN_DATA,JsonUtil.objectToString(mainBean));
+                setClass(ManagerActivity.class);
                 break;
             default:
                 break;

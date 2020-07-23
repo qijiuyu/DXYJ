@@ -4,4 +4,7 @@
     <string name="standard">&lt;= s=0.86D+0.2(mm)</string>
     <string name="standard_after">压后&lt;= s=0.86D+0.2(mm)</string>
     <string name="standard_two">压后&lt;= s=</string>
+
+    <drawable name="clr_normal">#ffffff</drawable>
+    <drawable name="clr_pressed">#96c1ff</drawable>
 </resources>
