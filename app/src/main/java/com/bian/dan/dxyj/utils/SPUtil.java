@@ -26,6 +26,8 @@ public class SPUtil {
 
     public static final String CONSTRUCTION="CONSTRUCTION"; //保存录入的“施工单位”数据
 
+    public static final String MAIN_DATA="MAIN_DATA";  //首页设置的数据
+
     private static SPUtil sharUtil = null;
     public static Gson gson=new Gson();
     private SPUtil(Context context, String sharname) {

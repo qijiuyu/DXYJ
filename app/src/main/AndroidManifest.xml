@@ -78,6 +78,16 @@
             android:screenOrientation="landscape"
             android:windowSoftInputMode="adjustPan|stateHidden" />
 
+        <activity
+            android:name=".activity.Hardware_Curvature_Activity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
+        <activity
+            android:name=".activity.HardwareActivity"
+            android:screenOrientation="landscape"
+            android:windowSoftInputMode="adjustPan|stateHidden" />
+
     </application>
 
 </manifest>

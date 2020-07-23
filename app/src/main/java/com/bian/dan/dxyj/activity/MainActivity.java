@@ -9,6 +9,7 @@ import android.view.View;
 import android.widget.EditText;
 
 import com.bian.dan.dxyj.R;
+import com.bian.dan.dxyj.bean.MainBean;
 import com.bian.dan.dxyj.bean.NameBean;
 import com.bian.dan.dxyj.utils.JsonUtil;
 import com.bian.dan.dxyj.utils.SPUtil;
@@ -133,6 +134,8 @@ public class MainActivity extends BaseActivity implements View.OnFocusChangeList
                     ToastUtil.showLong("请输入施工单位");
                     return;
                 }
+                MainBean mainBean=new MainBean(project,model,superVision,construction);
+                SPUtil.getInstance(this).addString(SPUtil.MAIN_DATA,JsonUtil.objectToString(mainBean));
                 break;
             default:
                 break;
