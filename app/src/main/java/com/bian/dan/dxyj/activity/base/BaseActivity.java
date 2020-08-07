@@ -1,4 +1,4 @@
-package com.bian.dan.dxyj.activity;
+package com.bian.dan.dxyj.activity.base;
 
 import android.app.Activity;
 import android.content.Context;

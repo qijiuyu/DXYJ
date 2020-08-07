@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bian.dan.dxyj.R;
-import com.bian.dan.dxyj.activity.BaseActivity;
+import com.bian.dan.dxyj.activity.base.BaseActivity;
 import com.bian.dan.dxyj.adapter.BaseAdapter;
 import com.bian.dan.dxyj.adapter.OnItemClickListener;
 import com.bian.dan.dxyj.adapter.ViewHolder;

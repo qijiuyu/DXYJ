@@ -1,16 +1,20 @@
 package com.bian.dan.dxyj.activity;
 
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextUtils;
 import android.text.TextWatcher;
+import android.view.KeyEvent;
 import android.view.View;
 import android.widget.EditText;
 import com.bian.dan.dxyj.R;
+import com.bian.dan.dxyj.activity.base.BaseActivity;
 import com.bian.dan.dxyj.bean.NameBean;
 import com.bian.dan.dxyj.bean.MainBean;
 import com.bian.dan.dxyj.db.dao.MainDao;
+import com.bian.dan.dxyj.utils.ActivitysLifecycle;
 import com.bian.dan.dxyj.utils.JsonUtil;
 import com.bian.dan.dxyj.utils.SPUtil;
 import com.bian.dan.dxyj.utils.ToastUtil;
@@ -329,5 +333,27 @@ public class MainActivity extends BaseActivity implements View.OnFocusChangeList
             default:
                 break;
         }
+    }
+
+
+
+    /**
+     * 连续点击两次返回退出
+     * @param event
+     * @return
+     */
+    protected long exitTime = 0;
+    @SuppressLint("RestrictedApi")
+    public boolean dispatchKeyEvent(KeyEvent event) {
+        if (event.getKeyCode() == KeyEvent.KEYCODE_BACK && event.getAction() == KeyEvent.ACTION_DOWN) {
+            if ((System.currentTimeMillis() - exitTime) > 2000) {
+                ToastUtil.showLong("再按一次退出程序!");
+                exitTime = System.currentTimeMillis();
+            } else {
+                ActivitysLifecycle.getInstance().exit();
+            }
+            return false;
+        }
+        return super.dispatchKeyEvent(event);
     }
 }

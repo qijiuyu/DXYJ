@@ -7,6 +7,7 @@ import android.widget.EditText;
 import androidx.annotation.Nullable;
 
 import com.bian.dan.dxyj.R;
+import com.bian.dan.dxyj.activity.base.BaseActivity;
 import com.bian.dan.dxyj.activity.setting.SettingActivity;
 import com.bian.dan.dxyj.utils.AddDataUtil;
 import com.bian.dan.dxyj.utils.SPUtil;

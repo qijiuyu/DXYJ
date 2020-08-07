@@ -7,7 +7,7 @@ import android.view.View;
 import androidx.annotation.Nullable;
 
 import com.bian.dan.dxyj.R;
-import com.bian.dan.dxyj.activity.BaseActivity;
+import com.bian.dan.dxyj.activity.base.BaseActivity;
 import com.bian.dan.dxyj.activity.LoginActivity;
 import com.bian.dan.dxyj.utils.SPUtil;
 
