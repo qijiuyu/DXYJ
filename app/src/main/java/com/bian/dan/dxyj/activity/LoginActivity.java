@@ -47,6 +47,31 @@ public class LoginActivity extends BaseActivity {
         AddDataUtil addDataUtil=new AddDataUtil();
         addDataUtil.addNZdata(this);
         addDataUtil.addZXdata(this);
+
+
+//        User u1 = new User("zhy", "2B青年");
+//        DatabaseHelper helper = DatabaseHelper.getHelper(this);
+//        try
+//        {
+//            helper.getUserDao().create(u1);
+//            u1 = new User("zhy2", "2B青年");
+//            helper.getUserDao().create(u1);
+//            u1 = new User("zhy3", "2B青年");
+//            helper.getUserDao().create(u1);
+//            u1 = new User("zhy4", "2B青年");
+//            helper.getUserDao().create(u1);
+//            u1 = new User("zhy5", "2B青年");
+//            helper.getUserDao().create(u1);
+//            u1 = new User("zhy6", "2B青年");
+//            helper.getUserDao().create(u1);
+//
+//            List<User> list=helper.getUserDao().queryForAll();
+//
+//
+//        } catch (SQLException e)
+//        {
+//            e.printStackTrace();
+//        }
     }
 
 

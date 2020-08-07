@@ -101,7 +101,7 @@ public class MainPopwindow extends PopupWindow {
     public void setData(final EditText editText,final String message,final int type){
          List<LineAndTension.DataBean> list=new ArrayList<>();
          List<NameBean> list2=new ArrayList<>();
-        MainPopwindowAdapter mainPopwindowAdapter=new MainPopwindowAdapter(activity);
+         MainPopwindowAdapter mainPopwindowAdapter=new MainPopwindowAdapter(activity);
          if(type==1){
              list= JsonUtil.stringToList(message, LineAndTension.DataBean.class);
              mainPopwindowAdapter.setData(list);

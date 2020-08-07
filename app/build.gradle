@@ -1,5 +1,4 @@
 apply plugin: 'com.android.application'
-
 android {
     compileSdkVersion 29
     buildToolsVersion "29.0.2"
@@ -23,11 +22,10 @@ android {
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-
 }
 
 dependencies {
-    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support:appcompat-v7:29.1.1'
     //butterknife
     implementation 'com.jakewharton:butterknife:10.2.0'
@@ -44,9 +42,7 @@ dependencies {
     implementation files('libs/poi-3.15.jar')
     implementation files('libs/commons-codec-1.10.jar')
     implementation 'com.alibaba:fastjson:1.1.54.android'
-    implementation "com.android.support:recyclerview-v7:29.1.1"
-
-
-
-
+    implementation 'com.android.support:recyclerview-v7:29.1.1'
+    implementation files('libs/ormlite-android-5.1.jar')
+    implementation files('libs/ormlite-core-5.1.jar')
 }

@@ -19,61 +19,212 @@
             android:textColor="@color/white"
             android:textSize="40sp" />
 
-        <EditText
-            android:id="@+id/et_project"
-            android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:tag="1"
-            android:layout_marginTop="30dp"
-            android:background="@color/colorBlue"
-            android:textStyle="bold"
-            android:hint="请输入工程名"
-            android:textColorHint="#c8ffff"
-            android:textColor="#c8ffff"
-            android:textSize="20sp"
-            android:gravity="center"/>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="30dp">
 
-        <EditText
-            android:id="@+id/et_model"
-            android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:tag="2"
-            android:layout_marginTop="30dp"
-            android:background="@color/colorBlue"
-            android:textStyle="bold"
-            android:hint="请输入导线型号"
-            android:textColorHint="#c8ffff"
-            android:textColor="#c8ffff"
-            android:textSize="20sp"
-            android:gravity="center"/>
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="工程名："
+                android:textSize="20sp"
+                android:textColor="@color/color_E81010"
+                android:textStyle="bold"/>
 
-        <EditText
-            android:id="@+id/et_supervision"
-            android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:tag="3"
-            android:layout_marginTop="30dp"
-            android:background="@color/colorBlue"
-            android:textStyle="bold"
-            android:hint="请输入监理单位"
-            android:textColorHint="#c8ffff"
-            android:textColor="#c8ffff"
-            android:textSize="20sp"
-            android:gravity="center"/>
+            <EditText
+                android:id="@+id/et_project"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:tag="1"
+                android:background="@color/colorBlue"
+                android:textStyle="bold"
+                android:hint="请输入工程名"
+                android:textColorHint="#c8ffff"
+                android:textColor="#c8ffff"
+                android:textSize="20sp"
+                android:gravity="center"/>
 
-        <EditText
-            android:id="@+id/et_construction"
-            android:layout_width="300dp"
-            android:layout_height="45dp"
-            android:tag="4"
-            android:layout_marginTop="30dp"
-            android:background="@color/colorBlue"
-            android:textStyle="bold"
-            android:hint="请输入施工单位"
-            android:textColorHint="#c8ffff"
-            android:textColor="#c8ffff"
-            android:textSize="20sp"
-            android:gravity="center"/>
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="标段："
+                android:textSize="20sp"
+                android:textColor="@color/color_E81010"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/et_block"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:tag="2"
+                android:background="@color/colorBlue"
+                android:textStyle="bold"
+                android:hint="请输入标段"
+                android:textColorHint="#c8ffff"
+                android:textColor="#c8ffff"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="导线规格："
+                android:textSize="20sp"
+                android:textColor="@color/color_E81010"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/et_conductor"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:tag="2"
+                android:background="@color/colorBlue"
+                android:textStyle="bold"
+                android:hint="请输入导线/地线规格"
+                android:textColorHint="#c8ffff"
+                android:textColor="#c8ffff"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="回路数："
+                android:textSize="20sp"
+                android:textColor="@color/color_E81010"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/et_loop"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:tag="2"
+                android:background="@color/colorBlue"
+                android:textStyle="bold"
+                android:hint="请输入回路数"
+                android:textColorHint="#c8ffff"
+                android:textColor="#c8ffff"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="分裂数："
+                android:textSize="20sp"
+                android:textColor="@color/color_E81010"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/et_lineNum"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:background="@color/colorBlue"
+                android:textStyle="bold"
+                android:hint="请输入导线分裂数"
+                android:textColorHint="#c8ffff"
+                android:textColor="#c8ffff"
+                android:textSize="20sp"
+                android:gravity="center"
+                android:inputType="phone"/>
+
+        </LinearLayout>
+
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="监理单位："
+                android:textSize="20sp"
+                android:textColor="@color/color_E81010"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/et_supervision"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:tag="3"
+                android:background="@color/colorBlue"
+                android:textStyle="bold"
+                android:hint="请输入监理单位"
+                android:textColorHint="#c8ffff"
+                android:textColor="#c8ffff"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                android:layout_width="110dp"
+                android:layout_height="wrap_content"
+                android:text="施工单位："
+                android:textSize="20sp"
+                android:textColor="@color/color_E81010"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/et_construction"
+                android:layout_width="300dp"
+                android:layout_height="45dp"
+                android:tag="4"
+                android:background="@color/colorBlue"
+                android:textStyle="bold"
+                android:hint="请输入施工单位"
+                android:textColorHint="#c8ffff"
+                android:textColor="#c8ffff"
+                android:textSize="20sp"
+                android:gravity="center"/>
+
+        </LinearLayout>
 
 
         <RelativeLayout

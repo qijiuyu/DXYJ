@@ -66,7 +66,7 @@ public class MainPopwindowAdapter extends BaseAdapter {
             holder = (ViewHolder) view.getTag();
         }
         if(list.size()>0){
-            holder.tvName.setText(list.get(position).getModel());
+            holder.tvName.setText(list.get(position).getApplyWire());
         }else{
             holder.tvName.setText(list2.get(position).getName());
         }

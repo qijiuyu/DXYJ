@@ -130,7 +130,6 @@ public class ManagerActivity extends BaseActivity {
             public void onClick(View v) {
                 final int ggTag= (int) imgGg.getTag();
                 final int lgTag= (int) imgLg.getTag();
-                LogUtils.e(ggTag+"+++++++++++++++++++"+lgTag);
                 if(ggTag==0 && lgTag==0){
                     ToastUtil.showLong("请选择类型");
                     return;
@@ -167,6 +166,7 @@ public class ManagerActivity extends BaseActivity {
                     default:
                         break;
                 }
+                LogUtils.e(managerEnum.value()+"++++++++++++++++");
             }
         });
 
